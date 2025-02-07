@@ -19,7 +19,6 @@
 	<include from="this://./teams/eln/cloud.xml"/>
 	<include from="this://./teams/eln/container.xml"/>
 	<packages type="bootstrap">
-		<package name="basesystem"/>
 		<package name="filesystem"/>
 	</packages>
 </image>
