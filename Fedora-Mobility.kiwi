@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="7.4" name="Fedora-Mobility">
+	<description type="system">
+		<author>Fedora Mobility SIG</author>
+		<contact>https://matrix.to/#/#mobility:fedoraproject.org</contact>
+		<specification>Fedora Linux</specification>
+	</description>
+	<preferences>
+		<version>Rawhide</version>
+		<packagemanager>dnf5</packagemanager>
+		<locale>en_US</locale>
+		<keytable>us</keytable>
+		<timezone>UTC</timezone>
+		<release-version>rawhide</release-version>
+	</preferences>
+	<include from="this://./repositories/core.xml"/>
+	<include from="this://./repositories/sdm845.xml"/>
+	<include from="this://./components/common.xml"/>
+	<include from="this://./components/boot.xml"/>
+	<include from="this://./components/desktops/common.xml"/>
+	<include from="this://./components/desktops/phosh.xml"/>
+	<include from="this://./components/liveinstall.xml"/>
+	<include from="this://./components/users.xml"/>
+	<include from="this://./teams/base.xml"/>
+	<include from="this://./teams/sdm845.xml"/>
+	<packages type="bootstrap">
+		<package name="filesystem"/>
+	</packages>
+</image>
