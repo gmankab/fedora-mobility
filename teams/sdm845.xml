@@ -11,5 +11,13 @@
 	</profiles>
 	<packages type="bootstrap" patternType="plusRecommended" profiles="SDM845-Disk,SDM845-Live">
 		<package name="fedora-release-mobility"/>
+		<package name="bootmac"/>
+		<package name="hexagonrpc"/>
+		<package name="iio-sensor-proxy"/>
+		<package name="libssc"/>
+		<package name="pd-mapper"/>
+		<package name="qrtr"/>
+		<package name="rmtfs"/>
+		<package name="tqftpserv"/>
 	</packages>
 </image>
