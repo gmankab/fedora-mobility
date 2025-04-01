@@ -11,13 +11,72 @@
 	</profiles>
 	<packages type="bootstrap" patternType="plusRecommended" profiles="SDM845-Disk,SDM845-Live">
 		<package name="fedora-release-mobility"/>
+	</packages>
+	<packages type="bootstrap" profiles="SDM845-Disk,SDM845-Live">
+		<!-- Hardware support packages -->
 		<package name="bootmac"/>
 		<package name="hexagonrpc"/>
-		<package name="iio-sensor-proxy"/>
 		<package name="libssc"/>
 		<package name="pd-mapper"/>
 		<package name="qrtr"/>
 		<package name="rmtfs"/>
 		<package name="tqftpserv"/>
+
+		<!-- Patched packages -->
+		<package name="iio-sensor-proxy"/>
+
+		<!-- Unneeded firmwares -->
+		<ignore name="amd-gpu-firmware"/>
+		<ignore name="amd-ucode-firmware"/>
+		<ignore name="bcm2711-firmware"/>
+		<ignore name="bcm2835-firmware"/>
+		<ignore name="bcm283x-firmware"/>
+		<ignore name="bcm283x-overlays"/>
+		<ignore name="brcmfmac-firmware"/>
+		<ignore name="cirrus-audio-firmware"/>
+		<ignore name="intel-audio-firmware"/>
+		<ignore name="intel-gpu-firmware"/>
+		<ignore name="iwlegacy-firmware"/>
+		<ignore name="iwlwifi-dvm-firmware"/>
+		<ignore name="iwlwifi-mvm-firmware"/>
+		<ignore name="libertas-firmware"/>
+		<ignore name="mt7xxx-firmware"/>
+		<ignore name="nvidia-gpu-firmware"/>
+		<ignore name="nxpwireless-firmware"/>
+		<ignore name="realtek-firmware"/>
+		<ignore name="tiwilink-firmware"/>
+
+		<!-- Unneeded hardware support -->
+		<ignore name="smartmontools"/>
+		<ignore name="sane-backends-drivers-cameras"/>
+		<ignore name="sane-backends-drivers-scanners"/>
+		<ignore name="xorg-x11-drv-nouveau"/>
+		<ignore name="xorg-x11-drv-amdgpu"/>
+		<ignore name="xorg-x11-drv-ati"/>
+		<ignore name="b43-fwcutter"/>
+		<ignore name="pcsc-lite"/>
+		<ignore name="pcsc-lite-ccid"/>
+		<ignore name="opensc"/>
+
+		<!-- Unneeded S3 support -->
+		<ignore name="python3-botocore"/>
+		<ignore name="python3-boto3"/>
+		<ignore name="python3-s3transfer"/>
+
+		<!-- Unneeded big leaf packages -->
+		<ignore name="geolite2-city"/>
+		<ignore name="geolite2-country"/>
+
+		<!-- Unneeded U-Boot images -->
+		<ignore name="uboot-images-armv8"/>
+
+		<!-- Unapplicable -->
+		<ignore name="mediawriter"/>
+
+		<!-- Dropped leaf libraries -->
+		<ignore name="libgphoto2"/>
+		<ignore name="gd"/>
+		<ignore name="libXpm"/>
+		<ignore name="lockdev"/>
 	</packages>
 </image>
