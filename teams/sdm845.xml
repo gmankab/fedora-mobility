@@ -23,6 +23,9 @@
 		<package name="tqftpserv"/>
 		<package name="alsa-ucm-mobility-sdm845"/>
 
+		<!-- Mobility tweaks -->
+		<package name="mobility-tweaks"/>
+
 		<!-- Patched packages -->
 		<package name="iio-sensor-proxy"/>
 
