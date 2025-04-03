@@ -1,9 +1,4 @@
 <image>
-	<repository type="rpm-md" alias="sdm845-kernel" sourcetype="baseurl" priority="98">
-		<source path="https://download.copr.fedorainfracloud.org/results/samcday/sdm845/fedora-$releasever-$basearch/">
-			<signing key="https://download.copr.fedorainfracloud.org/results/samcday/sdm845/pubkey.gpg"/>
-		</source>
-	</repository>
 	<repository type="rpm-md" alias="sdm845" sourcetype="baseurl" priority="98">
 		<source path="https://download.copr.fedorainfracloud.org/results/@mobility/sdm845/fedora-$releasever-$basearch/">
 			<signing key="https://download.copr.fedorainfracloud.org/results/@mobility/sdm845/pubkey.gpg"/>
