@@ -26,6 +26,9 @@
 		<!-- Patched packages -->
 		<package name="iio-sensor-proxy"/>
 
+		<!-- Display manager -->
+		<package name="phrog"/>
+
 		<!-- Unneeded firmwares -->
 		<ignore name="amd-gpu-firmware"/>
 		<ignore name="amd-ucode-firmware"/>
@@ -73,6 +76,7 @@
 
 		<!-- Unapplicable -->
 		<ignore name="mediawriter"/>
+		<ignore name="gnome-disk-utility"/>
 
 		<!-- Dropped leaf libraries -->
 		<ignore name="libgphoto2"/>
