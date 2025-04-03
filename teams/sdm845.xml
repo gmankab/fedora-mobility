@@ -1,18 +1,14 @@
 <image>
 	<profiles>
-		<profile name="SDM845-Live" description="SDM845 Spin Live DVD">
-			<requires profile="Phosh-Desktop"/>
-			<requires profile="LiveInstall"/>
-		</profile>
 		<profile name="SDM845-Disk" description="SDM845 Spin Install Disk">
 			<requires profile="BootDiskCore"/>
 			<requires profile="Phosh-Desktop"/>
 		</profile>
 	</profiles>
-	<packages type="bootstrap" patternType="plusRecommended" profiles="SDM845-Disk,SDM845-Live">
+	<packages type="bootstrap" patternType="plusRecommended" profiles="SDM845-Disk">
 		<package name="fedora-release-mobility"/>
 	</packages>
-	<packages type="bootstrap" profiles="SDM845-Disk,SDM845-Live">
+	<packages type="bootstrap" profiles="SDM845-Disk">
 		<!-- Hardware support packages -->
 		<package name="bootmac"/>
 		<package name="hexagonrpc"/>
