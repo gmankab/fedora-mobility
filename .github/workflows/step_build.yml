@@ -74,7 +74,8 @@ jobs:
 
           # Some blobs from firmware-oneplus-sdm845 need to be preferred over
           # the stuff that comes from linux-firmware
-          sudo mv rootfs/usr/lib/firmware/{postmarketos,updates}
+          sudo mv rootfs/usr/lib/firmware/postmarketos/* rootfs/usr/lib/firmware/updates
+          sudo rmdir rootfs/usr/lib/firmware/postmarketos
 
           sudo umount rootfs
 
