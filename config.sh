@@ -138,7 +138,7 @@ fi
 # Setup default customizations
 #--------------------------------------
 
-if [[ "$kiwi_profiles" == *"Disk"* ]]; then
+if [[ "$kiwi_profiles" == *"Disk"* ]] && [[ "$kiwi_profiles" != *"SDM845"* ]]; then
 	# Find the architecture we are on
 	installarch=$(uname -m)
 	# Setup Raspberry Pi firmware
