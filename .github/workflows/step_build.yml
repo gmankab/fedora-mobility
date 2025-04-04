@@ -1,16 +1,5 @@
 on:
-  push:
-    branches: [main]
-    tags: ['*']
-  pull_request:
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_call:
 
 jobs:
   build:
@@ -93,25 +82,17 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
+          # TODO: Might want to rename these if you want to use parallel builds
           name: image-root.log
           path: ./outdir-build/build/image-root.log
 
       - name: Upload build artifacts
-        if: "!startsWith(github.ref, 'refs/tags/')"
         uses: actions/upload-artifact@v4
         with:
-          name: Fedora-Mobility.aarch64-Rawhide.raw
-          path: artifacts/
+          # TODO: What name should it be here?
+          name: Fedora-Mobility-SDM845
+          path: ./Fedora-SDM845-Remix.tar.xz
 
       - name: Prepare release artifact
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           tar -Jcvf Fedora-SDM845-Remix.tar.xz artifacts/
-
-      - name: Create release
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          generate_release_notes: true
-          files: |
-            Fedora-SDM845-Remix.tar.xz
