@@ -68,6 +68,10 @@
 		-->
 		<ignore name="selinux-policy-targeted"/>
 
+		<!-- We don't need a rescue initrd, we know exactly what we're
+			 booting on.-->
+		<ignore name="dracut-config-rescue"/>
+
 		<!-- Hardware support packages -->
 		<package name="bootmac"/>
 		<package name="hexagonrpc"/>
