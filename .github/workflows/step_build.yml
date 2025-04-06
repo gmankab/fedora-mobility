@@ -79,6 +79,12 @@ jobs:
 
           sudo umount rootfs
 
+          # Clean out libdnf5 cache (800M+)
+          mkdir var-subvol
+          sudo mount -o loop,subvol=var artifacts/Fedora-Mobility-Remix-SDM845-root.raw var-subvol
+          sudo rm -rf var-subvol/cache/libdnf5/*
+          sudo umount var-subvol
+
           gzip artifacts/*
 
       - name: Upload image build log
