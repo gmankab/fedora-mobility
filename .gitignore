@@ -1,2 +1,5 @@
-outdir-build/
-outdir/
+outdir-build
+outdir
+output
+log.sh
+

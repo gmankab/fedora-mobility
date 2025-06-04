@@ -413,3 +413,4 @@ if [[ "$kiwi_profiles" == *"FEX"* ]]; then
 fi
 
 exit 0
+

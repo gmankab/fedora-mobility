@@ -1,4 +1,4 @@
-# install fedora 43 phosh on oneplus 6
+# fedora 43 on oneplus 6
 
 ### disclaimer
 
@@ -6,7 +6,11 @@
 - this is work-in-progress
 - it may be not possible to update your system
 
-### download fedora
+### building
+
+run ./build.sh
+
+### download prebuilt image
 
 ```sh
 curl -LO https://github.com/fedora-remix-mobility/fedora-kiwi-descriptions/releases/download/2025-04-04/Fedora-SDM845-Remix.tar.xz
@@ -62,4 +66,8 @@ sync
 ```
 
 then reboot phone and boot to system
+
+### credits
+
+(gmankab/fedora-mobility)[https://github.com/gmankab/fedora-mobility] repo is forked from (fedora-remix-mobility/fedora-kiwi-descriptions)[https://github.com/fedora-remix-mobility/fedora-kiwi-descriptions]
 

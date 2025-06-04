@@ -1,0 +1,29 @@
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v3
+      - name: install kiwi
+        run: |
+          export DEBIAN_FRONTEND=noninteractive
+          curl https://download.opensuse.org/repositories/Virtualization:/Appliances:/Builder/xUbuntu_24.04/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kiwi.gpg
+          echo 'deb [signed-by=/etc/apt/keyrings/kiwi.gpg] https://download.opensuse.org/repositories/Virtualization:/Appliances:/Builder/xUbuntu_24.04/ ./' | sudo tee /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get install -y python3-kiwi dnf
+          kiwi --version
+      - name: setup fedora keys
+        run: |
+          git clone --depth 1 https://github.com/rpm-software-management/distribution-gpg-keys
+          sudo mkdir /usr/share/distribution-gpg-keys/
+          sudo cp -R distribution-gpg-keys/keys/fedora /usr/share/distribution-gpg-keys/
+      - name: build
+        run: |
+          bash build/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          path: build/output/artifacts
+
