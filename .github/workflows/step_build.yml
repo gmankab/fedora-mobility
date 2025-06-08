@@ -1,6 +1,7 @@
 on:
-  workflow_call:
-
+  workflow_call: {}
+  workflow_dispatch: {}
+  push: {}
 jobs:
   build:
     runs-on: ubuntu-24.04-arm
